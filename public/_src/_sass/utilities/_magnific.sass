@@ -1,0 +1,413 @@
+//-------------------------------------------------------------------
+//  Magnific Popup CSS
+//-------------------------------------------------------------------
+
+.mfp-bg
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: $header-z * 2
+  overflow: hidden
+  position: fixed
+  background: $white
+
+.mfp-wrap
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: $header-z * 2
+  position: fixed
+  outline: none !important
+  -webkit-backface-visibility: hidden
+
+.mfp-container
+  text-align: center
+  position: absolute
+  width: 100%
+  height: 100%
+  left: 0
+  top: 0
+  padding: 0 1rem
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.mfp-container:before
+  content: ''
+  display: inline-block
+  height: 100%
+  vertical-align: middle
+
+.mfp-align-top .mfp-container:before
+  display: none
+
+.mfp-content
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  margin: 0 auto
+  text-align: left
+  z-index: $header-z * 2 + 500
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content
+  width: 100%
+  cursor: auto
+
+.mfp-ajax-cur
+  cursor: progress
+
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close
+  cursor: all-scroll
+  cursor: pointer
+
+.mfp-zoom
+  cursor: pointer
+  cursor: -webkit-zoom-in
+  cursor: -moz-zoom-in
+  cursor: zoom-in
+
+.mfp-auto-cursor .mfp-content
+  cursor: auto
+
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter
+  -webkit-user-select: none
+  -moz-user-select: none
+  user-select: none
+
+.mfp-loading.mfp-figure
+  display: none
+
+.mfp-hide
+  display: none !important
+
+// PRELOADER
+
+.mfp-preloader
+  color: #cccccc
+  position: absolute
+  top: 50%
+  width: auto
+  text-align: center
+  margin-top: -0.8em
+  left: 8px
+  right: 8px
+  z-index: 1044
+
+.mfp-preloader a
+  color: #cccccc
+
+.mfp-preloader a:hover
+  color: white
+
+.mfp-s-ready .mfp-preloader
+  display: none
+
+.mfp-s-error .mfp-content
+  display: none
+
+// BUTTONS
+
+button.mfp-arrow
+  overflow: visible
+  cursor: pointer
+  background: $white
+  border: 0
+  -webkit-appearance: none
+  outline: none
+  padding: 0
+  z-index: 21000
+  -webkit-box-shadow: none
+  box-shadow: none
+  display: block
+
+button::-moz-focus-inner
+  padding: 0
+  border: 0
+
+// CLOSE
+
+button.mfp-close
+  background-color: white
+  border: 0
+  content: ""
+  color: $white
+
+.mfp-close
+  display: block
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjU4cHgiIGhlaWdodD0iNThweCIgdmlld0JveD0iMCAwIDU4IDU4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCAzLjcgKDI4MTY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5jbG9zZTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4KICAgICAgICA8ZyBpZD0iY2xvc2UiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy4wMDAwMDAsIDcuMDAwMDAwKSIgaWQ9IkxpbmUiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTAuMzc5MzEwMzQ1LDQzLjYyMDY4OTcgTDQzLjYyMDY4OTcsMC4zNzkzMTAzNDUiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjM3OTMxMDM0NSwwLjM3OTMxMDM0NSBMNDMuNjIwNjg5Nyw0My42MjA2ODk3Ij48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==')
+  background-repeat: no-repeat
+  background-position: center
+  width: 26px
+  height: 26px
+  position: fixed
+  right: 2rem
+  top: 2rem
+  text-decoration: none
+  text-align: center
+  color: $white
+  font-style: normal
+  font-size: 0
+  font-family: $monospace
+  z-index: 10000
+  cursor: pointer
+
+.mfp-close:hover,
+.mfp-close:focus
+  opacity: .5
+  filter: alpha(opacity = 50)
+
+.mfp-close-btn-in .mfp-close
+  color: #333333
+
+// COUNTER
+
+.mfp-counter
+  display: none
+  font-family: $monospace
+  position: absolute
+  top: 0
+  right: 0
+  color: $black
+  font-size: 12px
+  line-height: 18px
+  white-space: nowrap
+
+// ARROWS
+
+.mfp-arrow
+  font-family: $monospace
+  font-style: normal !important
+  font-weight: normal !important
+  font-variant: normal !important
+  text-transform: none !important
+  speak: none
+  line-height: 1
+  border: 1px solid $black
+  overflow: visible
+  cursor: pointer
+  -webkit-appearance: none
+  display: none
+  outline: none
+  padding: 0
+  z-index: 21000
+  -webkit-box-shadow: none
+  box-shadow: none
+  font-size: 1.5rem
+  color: $black
+  &::-moz-focus-inner
+    padding: 0
+    border: 0
+  &:hover
+    color: $blue
+  
+  &.mfp-arrow-right:before,
+  &.mfp-arrow-left:before
+    display: none
+    position: absolute
+    top: 49%
+    padding: 1rem 1rem .7rem 1rem
+    border: 1px solid black
+    background-color: $white
+    z-index: 21000
+
+  &.mfp-arrow-right:before
+    content: "NEXT"
+    right: 0
+    margin-right: 16px
+
+  &.mfp-arrow-left:before
+    content: "PREV"
+    left: 0
+    margin-left: 16px
+
+// SLIDESHOW IFRAME
+
+.slideshow-iframe-holder
+  padding: 0
+
+.slideshow-iframe-holder .slideshow-iframe
+  line-height: 0
+  width: 100vw
+  height: 100vh
+
+//
+
+.mfp-iframe-holder
+  padding-top: 40px
+  padding-bottom: 40px
+
+.mfp-iframe-holder .mfp-content
+  line-height: 0
+  width: 100%
+  max-width: 1280px
+
+.mfp-iframe-scaler
+  width: 100%
+  height: 0
+  overflow: hidden
+  padding-top: 56.25%
+
+.mfp-iframe-scaler iframe
+	+box-shadow(0, 0, 12px,rgba(0, 0, 0, 0.25))
+	position: absolute
+  display: block
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: black
+
+// Main image in popup
+img.mfp-img
+  width: auto
+  max-width: 100%
+  height: auto
+  display: block
+  line-height: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  padding: 40px 0 40px
+  margin: 0 auto
+
+// The shadow behind the image
+.mfp-figure
+  line-height: 0
+
+.mfp-figure:after
+  +box-shadow(0,1px,4px,rgba(0, 0, 0, 0.075))
+  content: ''
+  position: absolute
+  left: 0
+  top: 40px
+  bottom: 40px
+  display: block
+  right: 0
+  width: auto
+  height: auto
+  z-index: -1
+  background: #444444
+
+.mfp-figure small
+  color: #bdbdbd
+  display: block
+  font-size: 12px
+  line-height: 14px
+
+.mfp-figure figure
+  margin: 0
+
+.mfp-bottom-bar
+  margin-top: -36px
+  position: absolute
+  top: 100%
+  left: 0
+  width: 100%
+  cursor: auto
+
+.mfp-title
+  font-family: $monospace
+  text-align: left
+  line-height: 11px
+  color: $black
+  word-wrap: break-word
+  padding-right: 36px
+
+.mfp-image-holder .mfp-content
+  max-width: 100%
+
+.mfp-gallery .mfp-image-holder .mfp-figure
+  cursor: pointer
+
+// LEGACY
+
+.mfp-ie7 .mfp-img
+  padding: 0
+
+.mfp-ie7 .mfp-bottom-bar
+  width: 600px
+  left: 50%
+  margin-left: -300px
+  margin-top: 5px
+  padding-bottom: 5px
+
+.mfp-ie7 .mfp-container
+  padding: 0
+
+.mfp-ie7 .mfp-content
+  padding-top: 44px
+
+.mfp-ie7 .mfp-close
+  top: 0
+  right: 0
+  padding-top: 0
+
+//-------------------------------------------------------------------
+// Simple fade transition
+//-------------------------------------------------------------------
+
+.mfp-fade.mfp-bg
+  @extend %smooth
+  opacity: 0
+
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 1
+
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 0
+
+.mfp-fade.mfp-wrap .mfp-content
+  @extend %smooth
+  opacity: 0
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0
+
+// Image Wrap
+
+div.image-wrap
+  width: 18%
+  margin-bottom: 4px
+  display: inline-block
+
+div.image-wrap img
+  width: 100%
+
+a.lightbox-link
+  -webkit-transition: all 0.025s ease-in-out 0s
+  -moz-transition: all 0.025s ease-in-out 0s
+  -ms-transition: all 0.025s ease-in-out 0s
+  -o-transition: all 0.025s ease-in-out 0s
+  transition: all 0.025s ease-in-out 0s
+
+a.lightbox-link:hover
+  -webkit-opacity: 0.8
+  -khtml-opacity: 0.8
+  -moz-opacity: 0.8
+  -ms-opacity: 0.8
+  -o-opacity: 0.8
+  opacity: 0.8
+  filter: alpha(opacity = 80)
+
+.image-wrap figcaption
+  display: none
+
+.mfp-bg figcaption
+  display: block
+  position: absolute
+
+.lb-title
+  margin: 0.5em 0 0 0.5em
+
+.lb-description
+  margin-left: 0.6em
+  width: 100%

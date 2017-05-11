@@ -1,0 +1,18 @@
+// HEADER
+header
+	+flx-row-wrap
+	+flx-algn-ctr
+	+border(bottom,2px,solid,$black)
+	+h-w-t-r-b-l-pos($header-height,100vw,0,null,null,0,fixed)
+	+transition(all, 0.1s, ease-in-out, 0)
+	background: $beige
+	padding: $base-spacing
+	transform: translateY(0)
+
+header.header-switch
+	+border(bottom,$border-thickness,solid,$dk-blue)
+	transform: translateY(-15.5rem)
+
+header.single
+	+h-w-t-r-b-l-pos($small-header,100vw,0,null,null,0,fixed)
+	padding: 0 $base-spacing

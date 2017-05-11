@@ -1,0 +1,76 @@
+//-------------------------------------------------------------------
+//  TYPOGRAPHY
+//-------------------------------------------------------------------
+
+body,h1,h2,h3,h4,h5,p,a
+  font-weight: 400
+
+=h1
+  font-family: $pdu
+  font-size: 4rem
+  text-transform: uppercase
+  letter-spacing: 2px
+
+h1
+  +h1
+  +stroke-type($white,$black,1px)
+
+header
+  a,
+  .back
+    +h1
+    +stroke-type($white,$type-color,1px)
+  a:hover,
+  .back:hover
+    cursor: pointer
+    +stroke-type($white,$blue,1px)
+
+h2
+  +h1
+  +stroke-type($white,$type-color,1px)
+  margin-bottom: $base-spacing
+
+h3
+  +h1
+  font-size: 4rem
+  margin-bottom: $base-spacing / 2
+
+h4
+  font-size: 2rem
+
+h5
+  font-size: 1.5rem
+
+p
+  font-size: $p-font
+  line-height: 1.4
+  font-family: $monospace
+  margin: auto
+  margin-bottom: $base-spacing
+  &:last-child
+    margin-bottom: 0
+
+a
+  font-size: 1.55rem
+  cursor: pointer
+  font-family: $monospace
+  color: $blue
+  display: inline-block
+  text-transform: uppercase
+  text-decoration: none
+  border-bottom: 1px dashed $lt-grey
+  padding-bottom: 4px
+  &:hover
+    color: $dk-blue
+
+// UTILITIES
+.text-right
+  +phabletup
+    text-align: right
+
+b
+  background-color: #FFFFE0
+  font-weight: 400
+
+ul
+  list-style: none!important

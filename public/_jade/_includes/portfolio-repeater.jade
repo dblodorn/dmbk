@@ -1,0 +1,43 @@
+section#portfolio-items
+	ul.projects
+		- if(get_field('portfolio_items')) :
+			- while(the_repeater_field('portfolio_items')) :
+			- $post_object = get_sub_field('portfolio_item');
+				- if( $post_object ) :
+				- $post = $post_object; setup_postdata( $post );
+					li.project
+						article
+							- $proj_image = get_field('project_photo')
+							.proj-image(style!="background-image: url('<?php echo $proj_image['url']; ?>');")
+							.proj-description
+								.proj-copy
+									h3
+										- the_title();
+									- the_field('project_description');
+									ul.project-links
+										- if(get_field('project_links')) :
+											li.project-link
+												ul
+												- while(the_repeater_field('project_links')) :
+													li
+														a.out-link(href!="<?php the_sub_field('project_link'); ?>" target="_blank") 
+															- the_sub_field('project_link_copy');
+															&nbsp;🔗
+												- endwhile
+											- endif
+											- if(get_field('gallery')) :
+												- $images = get_field('gallery');
+												li.project-link
+													.popup-gallery
+														- foreach($images as $image) :
+															a.out-link.popup(href!="<?php echo $image['url']; ?>") VIEW IMAGES&nbsp;🖼
+														- endforeach
+											- endif
+											- if(get_field('more_information')) :
+												li.project-link
+													a.out-link(href!="<?php the_permalink(); ?>") MORE INFORMATION&nbsp;💡
+											- endif
+				- wp_reset_postdata();
+				- endif;
+			- endwhile
+		- endif

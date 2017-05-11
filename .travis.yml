@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+    - "6"
+env:
+  global:
+    - secure: $FTP_USER
+    - secure: $FTP_PASSWORD
+before_script:
+    - npm install
+after_success:
+    - npm run build

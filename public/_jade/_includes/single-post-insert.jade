@@ -1,0 +1,10 @@
+main#single-project(role="main")
+  include ./header-partial-single.jade
+  section#top
+    .project-info
+      h1
+        - the_title();
+    aside(style!="background-image: url('<?php echo $proj_image['url']; ?>');")
+  section#info
+    article
+      - the_field('additional_details');

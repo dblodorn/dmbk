@@ -1,0 +1,8 @@
+{
+  "theme_name": "dkmb",
+  "output": "wp/wp-content/themes/",
+  "host": "db13.us",
+  "remoteFolder": "/**.db13.us/html/wp-content/themes/",
+  "deploy_folder_glob": "./wp/**/*",
+  "theme_folder_glob": "./wp/wp-content/themes/**/*"
+}

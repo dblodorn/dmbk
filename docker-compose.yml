@@ -1,0 +1,53 @@
+version: '2'
+
+services:
+  wordpress:
+    image: visiblevc/wordpress:latest
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - ./wp/data:/data
+      - ./wp/tweaks.ini:/usr/local/etc/php/conf.d/tweaks.ini # Optional tweaks to the php.ini config
+      - ./wp/wp-content/themes/dkmb:/app/wp-content/themes/dkmb
+      - ./wp/wp-content/plugins/:/app/wp-content/plugins
+      - ./wp/wp-content/uploads/:/app/wp-content/uploads
+    environment:
+      DB_HOST: db
+      DB_NAME: dkmb-wp
+      DB_PASS: root
+      PLUGINS: >-
+        [local]wp-optimize,
+        [local]advanced-custom-fields-pro,
+        [local]wp-migrate-db-pro,
+        [local]wp-migrate-db-pro-media-files,
+        [local]wp-migrate-db-pro-tweaks-master,
+        [local]wp-super-cache,
+        [local]wp-media-library-categories,
+        [local]wordpress-seo,
+        [local]search-exclude,
+        [local]cloudflare-flexible-ssl,
+        [local]wordpress-https
+      THEMES: >-
+        [local]dkmb
+      SEARCH_REPLACE:
+        yoursite.com,
+        localhost:8080
+      WP_DEBUG: 'false'
+  
+  db:
+    image: mysql:5.7
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 22222:80
+
+volumes:
+  data:

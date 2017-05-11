@@ -1,0 +1,16 @@
+section#intro
+	article
+		- if ( get_field('intro_title')) :
+			h2
+				- echo ($introtitle)
+		- else :
+			h2 Hello
+		- endif;
+		- if ( get_field('intro_copy')) :
+			- echo ($introcopy)
+		- else :
+			- echo ($intro)
+		- endif;
+		- if ( get_field('resume')) :
+			a(href!="<?php echo $resume['url'] ?>" target="_blank") 📄 Download CV
+		- endif;

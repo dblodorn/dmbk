@@ -1,0 +1,9 @@
+- /* Template Name: Home */
+- $introtitle = get_field('intro_title');
+- $introcopy = get_field('intro_copy');
+- $intro = get_field('intro', 'option');
+
+- get_header();
+main(role="main")
+	include ./_includes/introduction.jade
+- get_footer();
